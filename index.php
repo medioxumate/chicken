@@ -18,3 +18,9 @@ require_once('vendor/autoload.php');
 //Instantiate F3
 //Create an instance of the Base class
 $f3 = Base::instance();
+
+//Define a default root
+$f3->route('GET /', function(){
+    $view = new Template();
+    echo $view->render('views/all-about-chickens.html');
+});
